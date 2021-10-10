@@ -110,6 +110,10 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-title-color);
+  position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-header {
@@ -120,6 +124,9 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -131,6 +138,17 @@ body {
 
 .header-link.current {
   color: var(--accent-color);
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  display: block;
+  bottom: -32px;
 }
 
 .header {
@@ -193,6 +211,14 @@ body {
   color: var(--primary-title-color);
   background-color: var(--accent-color);
   border-radius: 4px;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover {
+  color: var(--accent-color);
+  background-color: var(--background-color);
 }
 
 /* ------------BENEFITS----------- */
@@ -259,6 +285,21 @@ body {
   margin-right: 27px;
 }
 
+.work-text {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+}
+
+.images-text {
+  position: relative;
+}
 /* ------------TEAM----------- */
 
 .team-list {
@@ -332,6 +373,9 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -348,6 +392,9 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--color-icon);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ------------CLIENTS----------- */
@@ -379,10 +426,16 @@ body {
   color: #afb1b8;
   background-color: #fff;
   padding: 16px 32px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icon {
   fill: var(--color-icon);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover {
@@ -431,12 +484,13 @@ body {
   font-size: 14px;
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-footer:hover,
-.contact-footer:focus,
-.address:hover,
-.address:focus {
+.contact-footer:focus {
   color: var(--accent-color);
 }
 
@@ -495,6 +549,9 @@ body {
   background-color: var(--background-color);
   border-radius: 4px;
   border: 1px solid transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter .btn:hover,
@@ -515,7 +572,29 @@ body {
 .project-item {
   margin-right: 30px;
   margin-bottom: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
+
+.project-top-text {
+  height: 100%;
+  color: var(--primary-title-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  font-size: 18px;
+  line-height: 1.56;
+  padding: 63px 24px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .project-title {
   font-weight: 700;
   font-size: 18px;
@@ -541,4 +620,9 @@ body {
 .project-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-item:hover .project-top-text,
+.project-item:focus .project-top-text {
+  transform: translateY(0);
 }
