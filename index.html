@@ -50,7 +50,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="primary-title">Эффективные решения для вашего бизнеса</h1>
-                <button class="btn hero-btn" type="button">Заказать услугу</button>
+                <button class="btn hero-btn" type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <!--Преимущества-->
@@ -109,20 +109,20 @@
                 <ul class="list work-list">
                     <li class="work-item">
                         <div class="images-text">
-                        <img src="./images/box1.jpg" alt="создание сайтов" width="370" height="294" />
-                        <p class="work-text">Десктопные приложения</p>
+                            <img src="./images/box1.jpg" alt="создание сайтов" width="370" height="294" />
+                            <p class="work-text">Десктопные приложения</p>
                         </div>
                     </li>
                     <li class="work-item">
                         <div class="images-text">
-                        <img src="./images/box2.jpg" alt="мобильные приложения" width="370" height="294" />
-                        <p class="work-text">Мобильные приложения</p>
+                            <img src="./images/box2.jpg" alt="мобильные приложения" width="370" height="294" />
+                            <p class="work-text">Мобильные приложения</p>
                         </div>
                     </li>
                     <li class="work-item">
                         <div class="images-text">
-                        <img src="./images/box3.jpg" alt="дизайн" width="370" height="294" />
-                        <p class="work-text">Дизайнерские решения</p>
+                            <img src="./images/box3.jpg" alt="дизайн" width="370" height="294" />
+                            <p class="work-text">Дизайнерские решения</p>
                         </div>
                     </li>
                 </ul>
@@ -380,7 +380,14 @@
             </div>
         </div>
     </footer>
-
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="close-btn" data-modal-close><svg class="x-btn">
+                    <use href="./images/sprite.svg#icon-close-btn"></use>
+                </svg></button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
