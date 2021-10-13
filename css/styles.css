@@ -216,7 +216,8 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-btn:hover {
+.hero-btn:hover,
+.hero-btn:focus {
   color: var(--accent-color);
   background-color: var(--background-color);
 }
@@ -290,6 +291,10 @@ body {
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
   color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -319,7 +324,7 @@ body {
 .secondary-title {
   font-weight: 700;
   font-size: 36px;
-  line-height: 42px;
+  line-height: 1.17;
   text-align: center;
   color: var(--secondary-title-color);
 }
@@ -438,11 +443,13 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-link:hover {
+.client-link:hover,
+.client-link:focus {
   border-color: var(--accent-color);
 }
 
-.client-link:hover .client-icon {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
   fill: var(--accent-color);
 }
 
